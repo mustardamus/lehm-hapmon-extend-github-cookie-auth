@@ -25,3 +25,8 @@ hit that API endpoint. It will in turn set the global states:
 - `this.$state.userIsAuthenticated` to `true`
 - `this.$state.currentUser` to the `Object` that is returned from the
   `/current_user` endpoint
+
+To get the current user in any Controller action you can access
+`request.auth.credentials`. This represents the current User model, eg
+`request.auth.credentials._id` or `request.auth.credentials.username`.
+
