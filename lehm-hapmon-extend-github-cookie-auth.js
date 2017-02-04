@@ -6,7 +6,7 @@ module.exports = {
   delimiters: '{{ }}',
   ignore: ['README.md', 'package.json'],
 
-  after: function (srcPath, distPath, variables, utils) {
+  after ({ srcPath, distPath, variables, utils }) {
     let gitignorePath = distPath + '/.gitignore'
     let gitignoreContent = utils.Fs.readFileSync(gitignorePath, 'utf8')
     gitignoreContent += '\nserver/config/auth.js\n'
